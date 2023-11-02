@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}{{user.full_name}}{% endblock %}
+
+{% block content %}
+    
+    <table>
+      <tr>
+        <td rowspan="2"><img src="{{user.image_url}}" width="200"</td>
+        <td><h1>{{user.first_name}}&nbsp;{{user.last_name}}</h1></td>
+      </tr>
+      <tr>
+        <td>
+          <form action="/user_action/{{user.id}}" method="POST">
+            <input type="submit" name="edit_delete" value="Edit">&nbsp;&nbsp;&nbsp<input type="submit" name="edit_delete" value="Delete">
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/">Home</a>
+        </td> 
+      </tr>
+    </table>
+
+{% endblock %}
